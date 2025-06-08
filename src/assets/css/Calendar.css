@@ -1,0 +1,97 @@
+.container {
+  max-width: 768px;
+  width: 96%;
+  margin: 3rem auto auto auto;
+}
+.divide-line {
+  margin: 3rem 3rem;
+  border: 0.7px solid rgb(218, 218, 218);
+}
+.title p {
+  font-size: 1.7rem;
+  margin: 0 auto;
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+  letter-spacing: 0.8rem;
+  text-align: center;
+}
+.desc {
+  width: 100%;
+  font-size: 1.7rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.day-row {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 1.4rem;
+}
+.date-column {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.4rem;
+}
+#bar {
+  position: absolute;
+  background: #d1b6e6;
+  width: 5rem;
+  color: white;
+  font-size: 1.1rem;
+}
+.week1 {
+  margin-right: 1rem;
+}
+.week1,
+.week2,
+.week3,
+.week4,
+.week5 {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 8%;
+}
+.week5 {
+  margin-right: 8rem;
+}
+.box {
+  text-align: center;
+}
+.num13 {
+  color: white;
+}
+#Dday {
+  z-index: -1;
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 30px;
+  transform: translate(-0.7rem, -2.5rem);
+  background: #a588bb;
+  text-align: center;
+}
+.lastDay {
+  opacity: .5;
+}
+.holiday {
+ color: rgba(255, 103, 57, 0.76);
+    font-weight: bold;
+}
+.sun {
+  color: rgba(255, 103, 57, 0.76);
+  font-weight: bold;
+}
+.counting {
+  text-align: center;
+  font-size: 1.5rem;
+}
+.counting span {
+  color: #c3a0df;
+}
+@media (max-width: 320px) {
+  #bar {
+    position: absolute;
+    background: #d1b6e6;
+    color: white;
+    font-size: 1rem;
+  }
+}

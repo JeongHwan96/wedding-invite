@@ -1,0 +1,22 @@
+
+
+/* 반응형 폰트 사이즈 예시 */
+/* 화면 크기에 따라 폰트 크기 변경 (옵션) */
+@media (max-width: 480px) {
+  html {
+    font-size: 90%; /* 14.4px */
+  }
+}
+
+@media (min-width: 1024px) {
+  html {
+    font-size: 110%; /* 17.6px */
+  }
+}
+
+#app {
+max-width: 768px;
+    margin: 0 auto;
+    width: 96%;
+}
+
