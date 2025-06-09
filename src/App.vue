@@ -4,6 +4,8 @@
     <MainInfo></MainInfo>
     <Calendar></Calendar>
     <wedding-gallery></wedding-gallery>
+    <Map></Map>
+    <BankAccount></BankAccount>
   </div>
 </template>
 

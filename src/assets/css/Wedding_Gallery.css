@@ -5,10 +5,10 @@
   padding-bottom: 3rem;
   letter-spacing: 1.5rem;
 }
-.wedding-map p{
+.wedding-map p {
   margin-top: 10rem;
-  font-size:2rem;
-  padding:0 1rem;
+  font-size: 2rem;
+  padding: 0 1rem;
   letter-spacing: 1.3rem;
 }
 .wedding-map img {
@@ -16,13 +16,10 @@
   margin-bottom: 3rem;
 }
 
-
 .container2 {
   max-width: 1200px;
   margin: 0 auto;
 }
-
-
 
 .container {
   max-width: 1200px;
@@ -60,9 +57,9 @@
 
 /* 각 팀별 클래스 - 이미지 경로 맞춰서 추가 */
 .img1 {
-  background-image: url('@/assets/img/img1.jpg');
+  background-image: url("@/assets/img/화면 캡처 2024-08-14 080859.png");
 }
-.img2 {
+/* .img2 {
   background-image: url('@/assets/img/img2.jpg');
 }
 .img3 {
@@ -73,7 +70,7 @@
 }
 .img5 {
   background-image: url('@/assets/img/img2.jpg');
-}
+} */
 /* 필요한 만큼 계속 추가하세요... */
 
 .wedding-map {

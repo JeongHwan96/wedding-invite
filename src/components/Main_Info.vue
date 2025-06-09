@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="main-picture">
-      <img src="../assets/img/Main_Info.jpg" />
+      <img src="../assets/img/화면 캡처 2024-08-14 080859.png" />
     </div>
     <div class="main-info">
       <div class="main-info-title">
@@ -33,7 +33,7 @@
         </div>
       </div>
       <div class="bottom-img">
-        <img src="../assets/img/Main_Info.jpg" />
+        <img src="../assets/img/화면 캡처 2024-08-14 080859.png" />
       </div>
     </div>
     <div class="divide-line"></div>
