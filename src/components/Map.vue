@@ -6,33 +6,32 @@
 
 <script>
 export default {
+  /* global kakao */
   mounted() {
-    window.kakao && window.kakao.maps ? this.initMap() : this.addKakaoMapScript();
+    this.waitForKakaoMap();
   },
   methods: {
-    addKakaoMapScript() {
-      const script = document.createElement("script");
-      /* global kakao */
-      script.onload = () => kakao.maps.load(this.initMap);
-      script.src =
-        "http://dapi.kakao.com/v2/maps/sdk.js?autoload=false&appkey=본인이 발급받은 appkey 등록";
-      document.head.appendChild(script);
+    waitForKakaoMap() {
+      if (window.kakao && window.kakao.maps) {
+        this.initMap();
+      } else {
+        // 100ms 후 재시도
+        setTimeout(this.waitForKakaoMap, 100);
+      }
     },
     initMap() {
-      var container = document.getElementById("map"); //지도를 담을 영역의 DOM 레퍼런스
-      var options = {
-        //지도를 생성할 때 필요한 기본 옵션
-        center: new kakao.maps.LatLng(33.450701, 126.570667), //지도의 중심좌표.
-        level: 3 //지도의 레벨(확대, 축소 정도)
+      const container = document.getElementById("map"); // 지도를 담을 영역
+      const options = {
+        center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도 중심좌표
+        level: 3 // 확대 레벨
       };
-
-      var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
+      new kakao.maps.Map(container, options);
     }
   }
 };
 </script>
 
-<style>
+<style scoped>
 .map {
   width: 100%;
   height: 400px;

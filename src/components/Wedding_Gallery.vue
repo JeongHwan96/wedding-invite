@@ -16,18 +16,18 @@
 
     <!-- 모달 슬라이더 -->
     <div v-show="isModalOpen" class="modal-overlay" @click.self="closeModal">
-      <swiper
-        ref="swiperRef"
-        :initial-slide="selectedIndex"
-        :lazy="true"
-        :loop="true"
-        class="modal-swiper"
-      >
-        <swiper-slide v-for="img in photo" :key="img.identifier">
-          <div class="modal-image" :class="img.className"></div>
-        </swiper-slide>
-        <div class="swiper-pagination" slot="pagination"></div>
-      </swiper>
+      <div class="swiper-container" ref="swiperContainer">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" v-for="img in photo" :key="img.identifier">
+            <div class="modal-image" :class="img.className"></div>
+          </div>
+        </div>
+        <!-- pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- navigation buttons (optional) -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
       <button class="modal-close" @click="closeModal">닫기</button>
     </div>
   </div>
