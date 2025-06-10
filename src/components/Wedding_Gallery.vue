@@ -3,6 +3,7 @@
     <div class="title">
       <p>Gallery</p>
     </div>
+
     <div class="players">
       <div
         class="player"
@@ -10,7 +11,9 @@
         :key="weddingphoto.identifier"
         @click="openModal(index)"
       >
-        <div class="image" :class="weddingphoto.className"></div>
+        <div class="image" :class="weddingphoto.className">
+          <img class="modal-image" :src="getImageUrl(weddingphoto.className)" alt="웨딩 이미지" />
+        </div>
       </div>
     </div>
 
@@ -18,13 +21,11 @@
     <div v-show="isModalOpen" class="modal-overlay" @click.self="closeModal">
       <div class="swiper-container" ref="swiperContainer">
         <div class="swiper-wrapper">
-          <div class="swiper-slide" autoplay v-for="img in photo" :key="img.identifier">
-            <div class="modal-image" :class="img.className"></div>
+          <div class="swiper-slide" v-for="img in photo" :key="img.identifier">
+            <img class="modal-image" :src="getImageUrl(img.className)" alt="웨딩 이미지" />
           </div>
         </div>
-        <!-- pagination -->
         <div class="swiper-pagination"></div>
-        <!-- navigation buttons (optional) -->
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
       </div>

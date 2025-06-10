@@ -14,9 +14,21 @@
   }
 }
 
+/* 기본 레이아웃 */
 #app {
-max-width: 768px;
-    margin: 0 auto;
-    width: 96%;
+  max-width: 768px;
+  margin: 0 auto;
+  width: 96%;
+  padding: 24px 0;
+  box-sizing: border-box;
 }
 
+/* 공통 여백 */
+#app > * + * {
+  margin-top: 32px;
+}
+
+/* 반응형 폰트 사이즈 개선 */
+html {
+  font-size: clamp(14px, 2vw, 18px);
+}

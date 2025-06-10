@@ -48,4 +48,15 @@ export default class WeddingGallery extends Vue {
   closeModal(): void {
     this.isModalOpen = false;
   }
+
+  getImageUrl(className: string): string {
+    const map: { [key: string]: string } = {
+      img1: require("@/assets/img/화면 캡처 2024-08-14 080859.png"),
+      img2: require("@/assets/img/img5.jpg"),
+      img3: require("@/assets/img/img6.jpg"),
+      img4: require("@/assets/img/img7.jpg"),
+      img5: require("@/assets/img/img8.jpg")
+    };
+    return map[className];
+  }
 }

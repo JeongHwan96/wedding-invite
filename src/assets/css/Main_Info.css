@@ -1,149 +1,106 @@
-
-.container{
-  max-width:768px;
-  margin:0 auto;
-  width:96%;
+.container {
+  max-width: 768px;
+  margin: 0 auto;
+  width: 96%;
+  padding: 2rem 0;
+  box-sizing: border-box;
 }
+
+/* 상단 이미지 */
 .main-picture {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 .main-picture img {
   width: 100%;
+  height: auto;
 }
+
+/* 정보 블록 */
 .main-info {
   width: 100%;
-  height: 90rem;
+  padding: 2rem 1.5rem;
+  box-sizing: border-box;
 }
+
+/* 타이틀 */
 .main-info-title p {
+  display: flex;
   justify-content: center;
   align-items: center;
-  display: flex;
-  font-size: 2rem;
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
   letter-spacing: 0.8rem;
-}
-.main-info-location p {
-  font-size: 1.5rem;
+  margin: 0.5rem 0;
   text-align: center;
-  margin: 0;
 }
+
+/* 날짜 및 장소 */
+.main-info-location p {
+  font-size: clamp(1.3rem, 3.5vw, 1.7rem);
+  text-align: center;
+  margin: 0.3rem 0;
+}
+
+/* 구분선 */
 .divide-line {
-  margin: 3rem 3rem;
+  margin: 2rem auto;
   border: 0.7px solid rgb(218, 218, 218);
+  width: 80%;
 }
+
+/* 인사말 영역 */
 .main-greeting {
-  margin: 0 auto;
-  padding: 0 2.3rem;
+  padding: 0 1.5rem;
+  margin-bottom: 3rem;
 }
 .main-greeting-title {
-  padding-bottom: 4rem;
+  padding-bottom: 2rem;
 }
 .main-greeting-title p {
   letter-spacing: 0.3rem;
-  font-size: 1.5rem;
+  font-size: clamp(1.3rem, 3.5vw, 1.8rem);
   margin: 0.4rem 0;
+  text-align: center;
 }
 .main-greeting-title p span {
-  font-size: 1.2rem;
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
 }
 .main-greeting-text p {
-  font-size: 1.27rem;
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
   margin-top: 0.5rem;
   padding: 0.3rem 0;
+  text-align: center;
 }
-.main-greeting-text {
-  margin-bottom: 3rem;
-}
+
+/* 하단 이미지 */
 .bottom-img {
   overflow: hidden;
+  margin-top: 2rem;
 }
 .bottom-img img {
   width: 100%;
-  transform: translate(0, -55%);
+  height: auto;
+  object-fit: cover;
+  transform: translateY(-50%);
 }
-@media (min-width: 350px) {
+
+/* 💻 데스크탑 이상 반응형 보완 */
+@media (min-width: 768px) {
   .main-info {
-    height: 95rem;
+    padding: 3rem 4rem;
   }
-  .main-info-location p {
-  font-size: 1.7rem;
-}
-  .main-greeting-title {
-  padding-bottom: 4rem;
-}
-  .main-greeting-title p span {
-    font-size: 1.4rem;
-  }
-  .main-greeting-title p {
-    font-size: 1.7rem;
-  }
-  .main-greeting-text p {
-    font-size: 1.4rem;
-    margin-top: 0.5rem;
-    padding: 0.3rem 0;
-  }
-  .main-greeting {
-    margin: 0 auto;
-  }
-  .divide-line {
-    margin: 3rem 2rem;
-  }
-  .bottom-img {
-    height:25%;
-  overflow: hidden;
-}
-.bottom-img img {
-  transform: translate(0, -60%);
-}
-}
-@media (min-width: 380px) {
-  .main-info {
-    height: 97rem;
-  }
-  .main-greeting {
-    padding: 0 2.7rem;
-  }
-  .divide-line {
-    margin: 3rem 2.5rem;
-  }
-    .main-greeting-text p {
-    font-size: 1.5rem;
-    margin-top: 0.5rem;
-    padding: 0.3rem 0;
-  }
-}
-@media (min-width: 420px) {
-  .main-info {
-    height: 105rem;
-  }
-  .main-info-title p {
-    font-size:2.3rem;
-}
-.main-info-location p {
-  font-size: 1.7rem;
-}
-  .main-greeting-title p span {
-    font-size: 1.4rem;
-  }
-  .main-greeting-title p {
-    font-size: 1.8rem;
-  }
-  .main-greeting-text p {
-    font-size: 1.6rem;
-    margin-top: 0.5rem;
-    padding: 0.3rem 0;
-  }
+
   .main-greeting {
     padding: 0 3rem;
   }
-  .bottom-img {
-  height: 25%;
-  }
-  .bottom-img img {
-  transform: translate(0, -55%);
-}
+
   .divide-line {
-    margin: 3rem 3rem;
+    margin: 3rem auto;
+    width: 70%;
+  }
+
+  .bottom-img img {
+    transform: translateY(-40%);
   }
 }
