@@ -18,7 +18,7 @@
     <div v-show="isModalOpen" class="modal-overlay" @click.self="closeModal">
       <div class="swiper-container" ref="swiperContainer">
         <div class="swiper-wrapper">
-          <div class="swiper-slide" v-for="img in photo" :key="img.identifier">
+          <div class="swiper-slide" autoplay v-for="img in photo" :key="img.identifier">
             <div class="modal-image" :class="img.className"></div>
           </div>
         </div>

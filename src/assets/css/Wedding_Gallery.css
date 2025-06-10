@@ -59,19 +59,15 @@
 .img1 {
   background-image: url("@/assets/img/화면 캡처 2024-08-14 080859.png");
 }
-/* .img2 {
-  background-image: url('@/assets/img/img2.jpg');
+.img2 {
+  background-image: url("@/assets/img/img2.png");
 }
 .img3 {
-  background-image: url('@/assets/img/img2.jpg');
+  background-image: url("@/assets/img/img3.png");
 }
 .img4 {
-  background-image: url('@/assets/img/img2.jpg');
+  background-image: url("@/assets/img/img4.png");
 }
-.img5 {
-  background-image: url('@/assets/img/img2.jpg');
-} */
-/* 필요한 만큼 계속 추가하세요... */
 
 .wedding-map {
   margin-top: 5rem;
@@ -101,6 +97,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.swiper-container {
+  width: 30%;
+  height: 100%;
 }
 
 .modal-swiper {

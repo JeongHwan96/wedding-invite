@@ -83,18 +83,6 @@
 
 <script>
 export default {
-  data() {
-    return {
-      acc_w: false,
-      isClicked: false,
-      groom: 3560213809763,
-      bride: 97120790768,
-      groom_father: 86501117977,
-      groom_mother: 82108656096936,
-      bride_father: 13004256015272,
-      bride_mother: 82108656096936
-    };
-  },
   methods: {
     handleModal(event) {
       this.isClicked = !this.isClicked;
@@ -265,6 +253,7 @@ ul {
     border: none;
     background: #ceb2e4;
     color: white;
+    font-weight: bold;
     font-size: 1.4rem;
     width: 17rem;
     height: 4rem;
