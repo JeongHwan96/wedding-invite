@@ -3,10 +3,79 @@
   height: 400px;
 }
 
+/* 전체 텍스트 래퍼 */
+.location-trans-wrapper {
+  padding: 0 1.2rem;
+  font-family: 'Pretendard', sans-serif;
+  background: #fff9f6; /* 배경 살짝 웜톤 */
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(234, 170, 120, 0.1);
+  padding: 20px;
+}
+
+/* 제목 */
+.location-trans-wrapper > h3 {
+  font-size: 1.4rem;
+  margin: 1.5rem 0 0.5rem;
+  color: #e88535; /* 코랄 오렌지 */
+  font-weight: 600;
+}
+
+/* 본문 텍스트 */
+.location-trans-wrapper > p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 0.6rem;
+}
+
+/* 강조 별표 */
+.location-trans-wrapper .star {
+  color: #ff6f3c;
+  font-weight: bold;
+}
+
+/* 반응형 처리 */
+@media screen and (max-width: 768px) {
+  .map {
+    height: 300px;
+  }
+}
+
 .location-trans-wrapper > h3 {
   font-size: 2rem;
   margin: 1rem 0 0.5rem;
+  color: #e88535; /* 포인트 색상 */
 }
+
 .location-trans-wrapper p {
   font-size: 1.4rem;
+  color: #444;
+}
+
+.location-trans-wrapper .star {
+  color: #e88535;
+  font-weight: bold;
+}
+
+.spacing {
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 480px) {
+  .map {
+    height: 250px;
+  }
+
+  .location-trans-wrapper {
+    padding: 16px 1rem;
+  }
+
+  .location-trans-wrapper > h3 {
+    font-size: 1.5rem;
+  }
+
+  .location-trans-wrapper > p {
+    font-size: 1.3rem;
+  }
 }

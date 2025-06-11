@@ -1,25 +1,163 @@
-.insert_wrap > input {
-  width: 100%;
-  border: 0;
-  background: #fff;
-  border-radius: 5px;
-  padding: 5px 10px;
-  margin-bottom: 30px;
+/* 기존 스타일은 그대로 유지하면서, 반응형 추가 */
+
+.guestBook_wrap {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #fefaf6;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-.insert_wrap > textarea {
-  width: 100%;
-  border: 0;
-  background: #fff;
-  border-radius: 5px;
-  padding: 5px 10px;
-  margin-bottom: 30px;
+.title h2 {
+  font-family: 'Pretendard', sans-serif;
+  font-size: 1.5rem;
+  color: #444;
+  margin-bottom: 20px;
 }
-.insert_wrap > button {
-  border: 0;
-  background: rgb(232, 133, 53);
-  border-radius: 5px;
-  padding: 10px;
+
+.insert_wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.insert_wrap input,
+.insert_wrap textarea {
+  width: 100%;
+  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 1.5rem;
+  font-family: 'Pretendard', sans-serif;
+  box-sizing: border-box;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: border 0.3s;
+}
+
+.insert_wrap input:focus,
+.insert_wrap textarea:focus {
+  outline: none;
+  border: 1px solid #e88535;
+}
+
+.insert_wrap textarea {
+  resize: none;
+  min-height: 80px;
+}
+
+.insert_wrap button.submit {
+  background-color: #e88535;
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
   color: #fff;
   font-weight: bold;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-family: 'Pretendard', sans-serif;
+}
+
+.insert_wrap button.submit:hover {
+  background-color: #cf7129;
+}
+
+.message_list {
+  margin-top: 40px;
+  text-align: left;
+  background-color: #fffefb;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.message {
+  background-color: #ffffff;
+  border: 1px solid #f0e6dd;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  font-family: 'Pretendard', sans-serif;
+  transition: transform 0.2s ease;
+}
+
+.message:hover {
+  transform: scale(1.01);
+  background-color: #fffaf4;
+}
+
+.message strong {
+  color: #e88535;
+  font-weight: bold;
+  font-size: 1.55rem;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.message::before {
+  content: "💬 ";
+  margin-right: 4px;
+  font-size: 1.9rem; /* 원하는 크기로 조절 */
+  vertical-align: middle; /* 텍스트와 세로 정렬 맞추기 */
+}
+
+
+/* ----------------------------------- */
+/* 반응형 처리 */
+
+/* 모바일 세로 모드 (max-width: 480px) */
+@media screen and (max-width: 480px) {
+  .guestBook_wrap {
+    padding: 20px 15px;
+    border-radius: 15px;
+  }
+
+  .title h2 {
+    font-size: 1.8rem;
+  }
+
+  .insert_wrap input,
+  .insert_wrap textarea {
+    font-size: 1.4rem;
+    padding: 10px 12px;
+  }
+
+  .insert_wrap textarea {
+    min-height: 60px;
+  }
+
+  .insert_wrap button.submit {
+    font-size: 1.35rem;
+    padding: 10px;
+  }
+
+  .message {
+    font-size: 1.4rem;
+    padding: 12px;
+  }
+
+  .message strong {
+    font-size: 1.4rem;
+  }
+}
+
+/* 태블릿 세로 모드 (max-width: 768px) */
+@media screen and (max-width: 768px) {
+  .guestBook_wrap {
+    max-width: 480px;
+    padding: 30px 20px;
+  }
+
+  .title h2 {
+    font-size: 1.9rem;
+  }
+
+  .insert_wrap button.submit {
+    font-size: 1.5rem;
+    padding: 12px;
+  }
 }
