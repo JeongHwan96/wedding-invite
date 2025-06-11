@@ -1,0 +1,12 @@
+.map {
+  width: 100%;
+  height: 400px;
+}
+
+.location-trans-wrapper > h3 {
+  font-size: 2rem;
+  margin: 1rem 0 0.5rem;
+}
+.location-trans-wrapper p {
+  font-size: 1.4rem;
+}

@@ -59,7 +59,7 @@
 .week5 > div {
   position: relative;
   width: 3rem;
-  height: 3rem; 
+  height: 3rem;
   text-align: center;
   box-sizing: border-box;
 }
@@ -80,7 +80,7 @@
 /* 현충일 표시 */
 #bar {
   position: absolute;
-   background: #d1b6e6;
+  background: #d1b6e6;
   width: 3rem;
   color: white;
   font-size: clamp(0.8rem, 2.5vw, 1rem);
@@ -105,7 +105,7 @@
   margin: 2rem 0;
 }
 .counting span {
-  color: #c3a0df;
+  color: #ee2f4f;
 }
 
 /* 💬 모바일 대응 */

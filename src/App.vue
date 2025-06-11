@@ -6,6 +6,7 @@
     <wedding-gallery></wedding-gallery>
     <Map></Map>
     <BankAccount></BankAccount>
+    <guestbook></guestbook>
   </div>
 </template>
 

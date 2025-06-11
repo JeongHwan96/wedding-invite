@@ -1,0 +1,25 @@
+.insert_wrap > input {
+  width: 100%;
+  border: 0;
+  background: #fff;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-bottom: 30px;
+}
+
+.insert_wrap > textarea {
+  width: 100%;
+  border: 0;
+  background: #fff;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-bottom: 30px;
+}
+.insert_wrap > button {
+  border: 0;
+  background: rgb(232, 133, 53);
+  border-radius: 5px;
+  padding: 10px;
+  color: #fff;
+  font-weight: bold;
+}

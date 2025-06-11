@@ -9,16 +9,16 @@
               <div class="divide"></div>
               <div class="account-row">
                 <div class="account-row-column-text">
-                  <li>농협 86501117977</li>
-                  <li>예금주: 정양수</li>
+                  <li>농협 12345678</li>
+                  <li>예금주: 김태경</li>
                 </div>
                 <button class="btn-copy" @click="copyInfo" id="groom-father">복사하기</button>
               </div>
               <div class="padding"></div>
               <div class="account-row">
                 <div class="account-row-column-text">
-                  <li>농협 82108656096936</li>
-                  <li>예금주: 김미화</li>
+                  <li>농협 1234567</li>
+                  <li>예금주: 이희경</li>
                 </div>
                 <button class="btn-copy" @click="copyInfo" id="groom-mother">복사하기</button>
               </div>
@@ -27,8 +27,8 @@
               <div class="divide"></div>
               <div class="account-row">
                 <div class="account-row-column-text">
-                  <li>농협 3560213809763</li>
-                  <li>예금주: 정동현</li>
+                  <li>신한 110439592371</li>
+                  <li>예금주: 김정환</li>
                 </div>
                 <button class="btn-copy" @click="copyInfo" id="groom">복사하기</button>
               </div>
@@ -37,30 +37,30 @@
 
           <div class="modal-context-w" v-if="acc_w">
             <ul>
-              <li>신랑혼주 계좌</li>
+              <li>신부혼주 계좌</li>
               <div class="divide"></div>
               <div class="account-row">
                 <div class="account-row-column-text">
-                  <li>농협 86501117977</li>
-                  <li>예금주: 정양수</li>
+                  <li>농협 1234567</li>
+                  <li>예금주: 박권서</li>
                 </div>
                 <button class="btn-copy" @click="copyInfo" id="bride-father">복사하기</button>
               </div>
               <div class="padding"></div>
               <div class="account-row">
                 <div class="account-row-column-text">
-                  <li>농협 82108656096936</li>
-                  <li>예금주: 김미화</li>
+                  <li>농협 1234567</li>
+                  <li>예금주: 이채민</li>
                 </div>
                 <button class="btn-copy" @click="copyInfo" id="bride-mother">복사하기</button>
               </div>
 
-              <li class="padding">신랑 계좌</li>
+              <li class="padding">신부 계좌</li>
               <div class="divide"></div>
               <div class="account-row">
                 <div class="account-row-column-text">
-                  <li>농협 3560213809763</li>
-                  <li>예금주: 정동현</li>
+                  <li>카카오뱅크 3333133977466</li>
+                  <li>예금주: 박소연</li>
                 </div>
                 <button class="btn-copy" @click="copyInfo" id="bride">복사하기</button>
               </div>
@@ -83,6 +83,17 @@
 
 <script>
 export default {
+  data() {
+    return {
+      acc_w: false,
+      isClicked: false,
+      groom: "110439592371",
+      bride: "3333133977466",
+      groom_m: "86501117977",
+      groom_w: "82108656096936",
+      bride_w: "13004256015272"
+    };
+  },
   methods: {
     handleModal(event) {
       this.isClicked = !this.isClicked;
@@ -97,27 +108,24 @@ export default {
       const t = document.createElement("textarea");
       document.body.appendChild(t);
 
-      if (buttonId == "groom-father") {
-        t.value = this.groom_father;
+      if (buttonId == "groom-m") {
+        t.value = this.groom_m;
         t.select();
         document.execCommand("copy");
-      } else if (buttonId == "groom-mother") {
-        t.value = this.groom_mother;
+      } else if (buttonId == "groom-w") {
+        t.value = this.groom_w;
         t.select();
         document.execCommand("copy");
       } else if (buttonId == "groom") {
         t.value = this.groom;
         t.select();
         document.execCommand("copy");
-      } else if (buttonId == "bride-father") {
-        t.value = this.bride_father;
-        t.select();
-        document.execCommand("copy");
-      } else if (buttonId == "bride-mother") {
-        t.value = this.bride_mother;
+      } else if (buttonId == "bride-w") {
+        t.value = this.bride_w;
         t.select();
         document.execCommand("copy");
       } else {
+        // this.$copyText(this.bride);
         t.value = this.bride;
         t.select();
         document.execCommand("copy");
@@ -130,143 +138,4 @@ export default {
 };
 </script>
 
-<style scoped>
-.padding {
-  padding-top: 1.5rem;
-}
-.divide {
-  margin: 0.5rem;
-  border: 0.5px solid white;
-  opacity: 0.4;
-  display: flex;
-  justify-content: center;
-}
-ul {
-  padding: 0;
-}
-.account-info {
-  margin: 5rem 0;
-}
-.account-info p {
-  text-align: center;
-  margin: 0;
-}
-.account-info p:nth-child(1) {
-  font-weight: bold;
-  font-size: 1.5rem;
-}
-.account-info p:nth-child(2) {
-  font-size: 1.3rem;
-  padding-bottom: 3rem;
-}
-.account-info button {
-  display: flex;
-  margin: 0 auto;
-  margin-bottom: 1rem;
-  border-radius: 1.3rem;
-  border: none;
-  background: #ceb2e4;
-  color: white;
-  font-size: 1.2rem;
-  width: 15rem;
-  height: 3rem;
-}
-.acc-btn1,
-.acc-btn2 {
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.account-row {
-  display: flex;
-  justify-content: space-between;
-}
-.account-row-column-text {
-  float: left;
-  text-align: start;
-}
-.modal-wrap {
-  margin: 0 auto;
-  display: flex;
-  position: relative;
-  top: -4rem;
-  justify-content: center;
-  z-index: 1;
-  animation: fadein 200ms ease-in-out forwards;
-}
-.modal-box {
-  position: absolute;
-  background: #d0bfdd;
-  width: 30rem;
-  border-radius: 3rem;
-}
-.modal-content {
-  padding: 1rem;
-  word-break: break-all;
-  max-height: 30rem;
-  font-size: 1.6rem;
-  text-align: center;
-}
-.modal-button {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  padding-bottom: 1.5rem;
-}
-.btn-copy {
-  border: none;
-  font-size: 1.2rem;
-  padding: 0.5rem;
-  margin: 1rem 1rem;
-  background: white;
-  border-radius: 1.2rem;
-  color: black;
-}
-.btn-confirm {
-  border: none;
-  font-size: 1.2rem;
-  padding: 1rem 10rem;
-  margin: 0 1rem;
-  background: white;
-  border-radius: 1.2rem;
-  color: black;
-}
-.input1,
-.input2 {
-  display: none;
-}
-@media (min-width: 350px) {
-  .account-info p:nth-child(1) {
-    font-weight: bold;
-    font-size: 1.7rem;
-  }
-  .account-info p:nth-child(2) {
-    font-size: 1.5rem;
-    padding-bottom: 3rem;
-  }
-  .account-info button {
-    display: flex;
-    margin: 0 auto;
-    margin-bottom: 1rem;
-    border-radius: 1.5rem;
-    border: none;
-    background: #ceb2e4;
-    color: white;
-    font-weight: bold;
-    font-size: 1.4rem;
-    width: 17rem;
-    height: 4rem;
-  }
-}
-@keyframes fadein {
-  0% {
-    transform: scale(0, 0);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1, 1);
-    opacity: 1;
-  }
-}
-</style>
+<style scoped src="../assets/css/BankAccount.css"></style>
