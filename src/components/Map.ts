@@ -13,7 +13,7 @@ export default class KakaoMap extends Vue {
   fallback = "https://play.google.com/store/apps/details?id=com.skt.tmap.ku";
   kakaofallback = "https://play.google.com/store/apps/details?id=net.daum.android.map";
   url = `tmap://route?goalname=${this.destination}&goalx=${this.lon}&goaly=${this.lat}&appname=JKNavigation`;
-  kakaourl = `kakaomap://route?ep=${this.lon},${this.lat}&by=CAR`;
+  kakaourl = `kakaomap://route?ep=${this.lon},${this.lat}&ename=${this.destination}&by=CAR`;
   mounted() {
     this.waitForKakaoMap();
   }
