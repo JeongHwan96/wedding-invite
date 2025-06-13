@@ -4,16 +4,22 @@ import Component from "vue-class-component";
 
 @Component
 export default class KakaoMap extends Vue {
-  private map: any = null; // kakao.maps.Map 타입은 any로 둠
+  private map: any = null;
   private marker: any = null;
+
   urlComponent = "드마레웨딩컨벤션";
   destination = encodeURIComponent(this.urlComponent);
   lat = 36.99430453447451;
   lon = 127.08792010448062;
-  fallback = "https://play.google.com/store/apps/details?id=com.skt.tmap.ku";
-  kakaofallback = "https://play.google.com/store/apps/details?id=net.daum.android.map";
-  url = `tmap://route?goalname=${this.destination}&goalx=${this.lon}&goaly=${this.lat}&appname=JKNavigation`;
-  kakaourl = `kakaomap://route?ep=${this.lon},${this.lat}&ename=${this.destination}&by=CAR`;
+
+  tmapScheme = `tmap://route?goalname=${this.destination}&goalx=${this.lon}&goaly=${this.lat}&appname=JKNavigation`;
+  tmapIntent = `intent://route?goalname=${this.destination}&goalx=${this.lon}&goaly=${this.lat}#Intent;scheme=tmap;package=com.skt.tmap.ku;end`;
+  tmapFallback = "https://play.google.com/store/apps/details?id=com.skt.tmap.ku";
+
+  kakaoScheme = `kakaomap://route?ep=${this.lon},${this.lat}&ename=${this.destination}&by=CAR`;
+  kakaoIntent = `intent://route?ep=${this.lon},${this.lat}&ename=${this.destination}&by=CAR#Intent;scheme=kakaomap;package=net.daum.android.map;end`;
+  kakaoFallback = "https://play.google.com/store/apps/details?id=net.daum.android.map";
+
   mounted() {
     this.waitForKakaoMap();
   }
@@ -31,24 +37,19 @@ export default class KakaoMap extends Vue {
     if (!container) return;
 
     const options = {
-      center: new window.kakao.maps.LatLng(36.99430453447451, 127.08792010448062),
+      center: new window.kakao.maps.LatLng(this.lat, this.lon),
       level: 3,
       draggable: true
     };
 
     this.map = new window.kakao.maps.Map(container, options);
 
-    const markerPosition = new window.kakao.maps.LatLng(36.99430453447451, 127.08792010448062);
+    const markerPosition = new window.kakao.maps.LatLng(this.lat, this.lon);
 
-    // 마커 아이콘 직접 지정 (예시)
-    const markerImageSrc =
-      "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_red.png";
-    const markerImageSize = new window.kakao.maps.Size(24, 35);
-    const markerImageOptions = { offset: new window.kakao.maps.Point(12, 35) };
     const markerImage = new window.kakao.maps.MarkerImage(
-      markerImageSrc,
-      markerImageSize,
-      markerImageOptions
+      "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_red.png",
+      new window.kakao.maps.Size(24, 35),
+      { offset: new window.kakao.maps.Point(12, 35) }
     );
 
     this.marker = new window.kakao.maps.Marker({
@@ -56,11 +57,7 @@ export default class KakaoMap extends Vue {
       image: markerImage
     });
 
-    const iwContent = `<div style="padding:10px;">
-        드마레 웨딩컨벤션 <br>
-       
-      </div>`;
-
+    const iwContent = `<div style="padding:10px;">${this.urlComponent} <br></div>`;
     const infowindow = new window.kakao.maps.InfoWindow({
       content: iwContent,
       position: markerPosition
@@ -70,18 +67,43 @@ export default class KakaoMap extends Vue {
     infowindow.open(this.map, this.marker);
   }
 
-  // Tmap 시작
-  startTmap() {
-    window.location.href = this.url;
+  private isIOS(): boolean {
+    return /iPhone|iPad|iPod/i.test(navigator.userAgent);
+  }
+
+  private isAndroid(): boolean {
+    return /Android/i.test(navigator.userAgent);
+  }
+
+  private openApp(url: string, fallbackUrl: string) {
+    const now = Date.now();
+    window.location.href = url;
+
+    // fallback: 앱이 실행되지 않으면 일정 시간 후 스토어로 이동
     setTimeout(() => {
-      window.location.href = this.fallback;
-    }, 2000); // Tmap 미설치 시
+      if (Date.now() - now < 2200) {
+        window.location.href = fallbackUrl;
+      }
+    }, 2000);
+  }
+
+  startTmap() {
+    if (this.isAndroid()) {
+      this.openApp(this.tmapIntent, this.tmapFallback);
+    } else if (this.isIOS()) {
+      this.openApp(this.tmapScheme, this.tmapFallback);
+    } else {
+      alert("지원하지 않는 OS입니다.");
+    }
   }
 
   startKakaoMap() {
-    window.location.href = this.kakaourl;
-    setTimeout(() => {
-      window.location.href = this.kakaofallback;
-    }, 2000);
+    if (this.isAndroid()) {
+      this.openApp(this.kakaoIntent, this.kakaoFallback);
+    } else if (this.isIOS()) {
+      this.openApp(this.kakaoScheme, this.kakaoFallback);
+    } else {
+      alert("지원하지 않는 OS입니다.");
+    }
   }
 }
