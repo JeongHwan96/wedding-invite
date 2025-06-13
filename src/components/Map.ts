@@ -75,13 +75,13 @@ export default class KakaoMap extends Vue {
     window.location.href = this.url;
     setTimeout(() => {
       window.location.href = this.fallback;
-    }, 1500); // Tmap 미설치 시
+    }, 2000); // Tmap 미설치 시
   }
 
   startKakaoMap() {
     window.location.href = this.kakaourl;
     setTimeout(() => {
       window.location.href = this.kakaofallback;
-    }, 1500);
+    }, 2000);
   }
 }
