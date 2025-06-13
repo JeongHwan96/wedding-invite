@@ -74,6 +74,6 @@ export default class KakaoMap extends Vue {
     window.location.href = this.url;
     setTimeout(() => {
       window.location.href = this.fallback;
-    }, 1500); // Tmap 미설치 시
+    }, 150); // Tmap 미설치 시
   }
 }
