@@ -57,29 +57,29 @@ export default class Calendar extends Vue {
   ];
 
   week3: CalendarCell[] = [
-    { date: 13, style: "sun" },
-    { date: 14, style: undefined },
+    { date: 14, style: "sun" },
     { date: 15, style: undefined },
     { date: 16, style: undefined },
     { date: 17, style: undefined },
     { date: 18, style: undefined },
-    { date: 19, style: undefined }
+    { date: 19, style: undefined },
+    { date: 20, style: undefined }
   ];
 
   week4: CalendarCell[] = [
-    { date: 20, style: "sun" },
-    { date: 21, style: undefined },
+    { date: 21, style: "sun" },
     { date: 22, style: undefined },
     { date: 23, style: undefined },
     { date: 24, style: undefined },
     { date: 25, style: undefined },
-    { date: 26, style: undefined }
+    { date: 26, style: undefined },
+    { date: 27, style: undefined }
   ];
 
   week5: CalendarCell[] = [
-    { date: 27, style: "sun" },
-    { date: 28, style: undefined },
-    { date: undefined, style: undefined },
+    { date: 28, style: "sun" },
+    { date: 29, style: undefined },
+    { date: 30, style: undefined },
     { date: undefined, style: undefined },
     { date: undefined, style: undefined },
     { date: undefined, style: undefined },
