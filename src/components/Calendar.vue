@@ -67,7 +67,7 @@
         <div
           v-for="(week, index) in week5"
           :key="week.date ?? index"
-          :class="week.style"
+          :class="week.date === 31 ? 'lastDay' : week.style"
           :id="week.id"
         >
           {{ week.date }}
