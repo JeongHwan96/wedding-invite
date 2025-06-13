@@ -35,10 +35,19 @@
   font-weight: bold;
 }
 
-/* Tmap */
+.navImg_Wrap {
+  display: flex;
+  margin: 5% 0 0 0;
+}
+
+/* Tmap & Kakao */
 .width-max {
   max-width: 50px;
   margin-right: 2px;
+}
+
+#img_tmap_prev_img {
+  margin: 0 10% 0 0;
 }
 
 /* 반응형 처리 */

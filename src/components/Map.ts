@@ -11,8 +11,9 @@ export default class KakaoMap extends Vue {
   lat = 36.99430453447451;
   lon = 127.08792010448062;
   fallback = "https://play.google.com/store/apps/details?id=com.skt.tmap.ku";
+  kakaofallback = "https://play.google.com/store/apps/details?id=net.daum.android.map";
   url = `tmap://route?goalname=${this.destination}&goalx=${this.lon}&goaly=${this.lat}&appname=JKNavigation`;
-
+  kakaourl = `kakaomap://route?ep=${this.lon},${this.lat}&by=CAR`;
   mounted() {
     this.waitForKakaoMap();
   }
@@ -57,7 +58,7 @@ export default class KakaoMap extends Vue {
 
     const iwContent = `<div style="padding:10px;">
         드마레 웨딩컨벤션 <br>
-        <a href="https://map.kakao.com/link/to/드마레 웨딩컨벤션,36.99430453447451,127.08792010448062" target="_blank" style="color:#e88535;">길찾기</a>
+       
       </div>`;
 
     const infowindow = new window.kakao.maps.InfoWindow({
@@ -75,5 +76,12 @@ export default class KakaoMap extends Vue {
     setTimeout(() => {
       window.location.href = this.fallback;
     }, 150); // Tmap 미설치 시
+  }
+
+  startKakaoMap() {
+    window.location.href = this.kakaourl;
+    setTimeout(() => {
+      window.location.href = this.kakaofallback;
+    }, 150);
   }
 }
