@@ -8,9 +8,9 @@ export default class KakaoMap extends Vue {
   private marker: any = null;
   urlComponent = "드마레웨딩컨벤션";
   destination = encodeURIComponent(this.urlComponent);
-  url = "tmap://route?goalname =${destination}&goalx=${long}&goaly=${lat}&appname=JKNaviation";
   lat = 36.99430453447451;
   lon = 127.08792010448062;
+  url = "tmap://route?goalname =${destination}&goalx=${lon}&goaly=${lat}&appname=JKNaviation";
 
   mounted() {
     this.waitForKakaoMap();
