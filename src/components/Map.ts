@@ -6,7 +6,7 @@ import Component from "vue-class-component";
 export default class KakaoMap extends Vue {
   private map: any = null; // kakao.maps.Map 타입은 any로 둠
   private marker: any = null;
-  urlComponent: string = "드마레웨딩컨벤션";
+  urlComponent = "드마레웨딩컨벤션";
   destination = encodeURIComponent(this.urlComponent);
   url = "tmap://route?goalname =${destination}&goalx=${long}&goaly=${lat}&appname=JKNaviation";
   lat = 36.99430453447451;
