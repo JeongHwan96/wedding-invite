@@ -3,7 +3,7 @@ import Vue from "vue";
 import Component from "vue-class-component";
 
 @Component
-export default class KakaoMap extends Vue {
+export default class Map extends Vue {
   private map: any = null;
   private marker: any = null;
 
@@ -16,8 +16,8 @@ export default class KakaoMap extends Vue {
   tmapIntent = `intent://route?goalname=${this.destination}&goalx=${this.lon}&goaly=${this.lat}#Intent;scheme=tmap;package=com.skt.tmap.ku;end`;
   tmapFallback = "https://play.google.com/store/apps/details?id=com.skt.tmap.ku";
 
-  kakaoScheme = `kakaomap://route?ep=${this.lon},${this.lat}&ename=${this.destination}&by=CAR`;
-  kakaoIntent = `intent://route?ep=${this.lon},${this.lat}&ename=${this.destination}&by=CAR#Intent;scheme=kakaomap;package=net.daum.android.map;end`;
+  kakaoScheme = `kakaomap://route?ep=${this.lat},${this.lon}&ename=${this.urlComponent}&by=CAR`;
+  kakaoIntent = `intent://route?ep=${this.lat},${this.lon}&ename=${this.urlComponent}&by=CAR#Intent;scheme=kakaomap;package=net.daum.android.map;end`;
   kakaoFallback = "https://play.google.com/store/apps/details?id=net.daum.android.map";
 
   mounted() {
@@ -87,7 +87,7 @@ export default class KakaoMap extends Vue {
     }, 2000);
   }
 
-  startTmap() {
+  public startTmap() {
     if (this.isAndroid()) {
       this.openApp(this.tmapIntent, this.tmapFallback);
     } else if (this.isIOS()) {
@@ -97,7 +97,7 @@ export default class KakaoMap extends Vue {
     }
   }
 
-  startKakaoMap() {
+  public startKakaoMap() {
     if (this.isAndroid()) {
       this.openApp(this.kakaoIntent, this.kakaoFallback);
     } else if (this.isIOS()) {
