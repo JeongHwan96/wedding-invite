@@ -10,6 +10,7 @@ export default class KakaoMap extends Vue {
   destination = encodeURIComponent(this.urlComponent);
   lat = 36.99430453447451;
   lon = 127.08792010448062;
+  fallback = "https://play.google.com/store/apps/details?id=com.skt.tmap.ku";
   url = `tmap://route?goalname=${this.destination}&goalx=${this.lon}&goaly=${this.lat}&appname=JKNavigation`;
 
   mounted() {
@@ -68,7 +69,9 @@ export default class KakaoMap extends Vue {
     infowindow.open(this.map, this.marker);
   }
 
+  // Tmap 시작
   startTmap() {
     window.location.href = this.url;
+    setTimeout(() => this.fallback, 1500); // Tmap 미설치 시
   }
 }
