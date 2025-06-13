@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="main-picture">
-      <img src="../assets/img/화면 캡처 2024-08-14 080859.png" />
+      <img src="../assets/img/img15.jpg" />
     </div>
     <div class="main-info">
       <div class="main-info-title">

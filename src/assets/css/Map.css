@@ -6,7 +6,7 @@
 /* 전체 텍스트 래퍼 */
 .location-trans-wrapper {
   padding: 0 1.2rem;
-  font-family: 'Pretendard', sans-serif;
+  font-family: "Pretendard", sans-serif;
   background: #fff9f6; /* 배경 살짝 웜톤 */
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(234, 170, 120, 0.1);
@@ -33,6 +33,12 @@
 .location-trans-wrapper .star {
   color: #ff6f3c;
   font-weight: bold;
+}
+
+/* Tmap */
+.width-max {
+  max-width: 50px;
+  margin-right: 2px;
 }
 
 /* 반응형 처리 */

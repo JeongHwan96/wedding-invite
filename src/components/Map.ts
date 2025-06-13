@@ -6,6 +6,10 @@ import Component from "vue-class-component";
 export default class KakaoMap extends Vue {
   private map: any = null; // kakao.maps.Map 타입은 any로 둠
   private marker: any = null;
+  destination = encodeURIComponent("드마레웨딩컨벤션");
+  url = "tmap://route?goalname =${destination}&goalx=${long}&goaly=${lat}&appname=JKNaviation";
+  lat = 36.99430453447451;
+  lon = 127.08792010448062;
 
   mounted() {
     this.waitForKakaoMap();
@@ -61,5 +65,9 @@ export default class KakaoMap extends Vue {
 
     this.marker.setMap(this.map);
     infowindow.open(this.map, this.marker);
+  }
+
+  startTmap() {
+    window.location.href = this.url;
   }
 }
