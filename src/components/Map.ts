@@ -10,7 +10,7 @@ export default class KakaoMap extends Vue {
   destination = encodeURIComponent(this.urlComponent);
   lat = 36.99430453447451;
   lon = 127.08792010448062;
-  url = "tmap://route?goalname =${destination}&goalx=${lon}&goaly=${lat}&appname=JKNaviation";
+  url = `tmap://route?goalname=${this.destination}&goalx=${this.lon}&goaly=${this.lat}&appname=JKNavigation`;
 
   mounted() {
     this.waitForKakaoMap();
