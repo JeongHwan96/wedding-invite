@@ -20,6 +20,7 @@
     <!-- 모달 슬라이더 -->
     <div v-show="isModalOpen" class="modal-overlay" @click.self="closeModal">
       <div class="swiper-container" ref="swiperContainer">
+        <!-- ✅ Swiper 외부로 이동한 닫기 버튼 -->
         <button class="modal-close" @click="closeModal">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -33,6 +34,7 @@
             />
           </svg>
         </button>
+
         <div class="swiper-wrapper">
           <div class="swiper-slide" v-for="img in photo" :key="img.identifier">
             <img class="modal-image" :src="getImageUrl(img.className)" alt="웨딩 이미지" />
@@ -44,5 +46,4 @@
 </template>
 
 <script lang="ts" src="./Wedding_Gallery.ts"></script>
-
 <style scoped src="../assets/css/Wedding_Gallery.css"></style>

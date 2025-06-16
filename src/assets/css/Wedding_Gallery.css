@@ -93,6 +93,7 @@
   height: 100%;
   fill: white;
   transition: transform 0.2s ease;
+  pointer-events: none;
 }
 
 .modal-close:hover svg {
