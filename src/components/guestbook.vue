@@ -8,10 +8,11 @@
     </div>
 
     <div class="message_list">
-      <div class="message" v-for="(msg, index) in messages" :key="index">
+      <div class="message" v-for="(msg, index) in visibleMessage" :key="index">
         <strong>{{ msg.name }}</strong
         >: {{ msg.content }}
       </div>
+      <button id="btn" v-if="isMore" @click="loadMore">더보기<strong> ∨</strong></button>
     </div>
   </div>
 </template>

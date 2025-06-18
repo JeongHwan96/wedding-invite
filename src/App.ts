@@ -6,6 +6,7 @@ import WeddingGallery from "./components/Wedding_Gallery.vue";
 import Map from "./components/Map.vue";
 import BankAccount from "./components/BankAccount.vue";
 import guestbook from "./components/guestbook.vue";
+import Footer from "./components/Footer.vue";
 @Component({
   components: {
     Intro,
@@ -14,7 +15,8 @@ import guestbook from "./components/guestbook.vue";
     WeddingGallery,
     Map,
     BankAccount,
-    guestbook
+    guestbook,
+    Footer
   }
 })
 export default class App extends Vue {}

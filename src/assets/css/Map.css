@@ -3,6 +3,13 @@
   height: 400px;
 }
 
+.title p {
+  font-size: clamp(1.5rem, 4vw, 1.8rem);
+  text-align: center;
+  letter-spacing: 1.2rem;
+  padding-bottom: 2rem;
+}
+
 /* 전체 텍스트 래퍼 */
 .location-trans-wrapper {
   padding: 0 1.2rem;
