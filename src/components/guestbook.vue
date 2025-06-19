@@ -12,7 +12,9 @@
         <strong>{{ msg.name }}</strong
         >: {{ msg.content }}
       </div>
-      <button id="btn" v-if="isMore" @click="loadMore">더보기<strong> ∨</strong></button>
+      <div class="More_Wrap">
+        <button id="btn" v-if="isMore" @click="loadMore">더보기<strong> ∨</strong></button>
+      </div>
     </div>
   </div>
 </template>

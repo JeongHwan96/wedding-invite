@@ -105,12 +105,26 @@
   vertical-align: middle; /* 텍스트와 세로 정렬 맞추기 */
 }
 
+.More_Wrap {
+  text-align: center;
+  border: 1px solid #ccc8c8;
+  border-radius: 5px;
+  padding: 3px 3px 3px 3px;
+  box-shadow: 0px 0px 2px 2px #ccc8c8;
+}
+.More_Wrap:hover {
+  background-color: bisque;
+  transition: 0.2s;
+}
 #btn {
   border: none;
   background-color: transparent;
   padding: 0;
   font-size: 15px;
   cursor: pointer;
+}
+#btn > strong {
+  text-align: center;
 }
 
 #btn.hidden {
@@ -154,21 +168,21 @@
   .message strong {
     font-size: 1.4rem;
   }
-}
 
-/* 태블릿 세로 모드 (max-width: 768px) */
-@media screen and (max-width: 768px) {
-  .guestBook_wrap {
-    max-width: 480px;
-    padding: 30px 20px;
-  }
+  /* 태블릿 세로 모드 (max-width: 768px) */
+  @media screen and (max-width: 768px) {
+    .guestBook_wrap {
+      max-width: 480px;
+      padding: 30px 20px;
+    }
 
-  .title h2 {
-    font-size: 1.9rem;
-  }
+    .title h2 {
+      font-size: 1.9rem;
+    }
 
-  .insert_wrap button.submit {
-    font-size: 1.5rem;
-    padding: 12px;
+    .insert_wrap button.submit {
+      font-size: 1.5rem;
+      padding: 12px;
+    }
   }
 }

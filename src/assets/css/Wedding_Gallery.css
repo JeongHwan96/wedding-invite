@@ -26,6 +26,10 @@
   overflow: hidden;
   border-radius: 8px;
 }
+.player:hover {
+  transform: scale(1.3);
+  transition: transform 0.5s;
+}
 
 .image {
   width: 100%;
