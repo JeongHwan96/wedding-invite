@@ -8,7 +8,7 @@ export default class Guestbook extends Vue {
   content = "";
   messages: Array<{ name: string; content: string }> = [];
   visiableCount = 4;
-
+  removeMoreButton = document.querySelector(".More_Wrap");
   async mounted() {
     await this.fetchMessages();
   }
@@ -43,5 +43,9 @@ export default class Guestbook extends Vue {
 
   loadMore() {
     this.visiableCount += 4;
+
+    if (this.visiableCount >= this.messages.length) {
+      this.removeMoreButton?.classList.add("remove");
+    }
   }
 }

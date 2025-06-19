@@ -12,8 +12,8 @@
         <strong>{{ msg.name }}</strong
         >: {{ msg.content }}
       </div>
-      <div class="More_Wrap">
-        <button id="btn" v-if="isMore" @click="loadMore">더보기<strong> ∨</strong></button>
+      <div class="More_Wrap" @click="loadMore" v-if="isMore">
+        <button id="btn">더보기<strong> ∨</strong></button>
       </div>
     </div>
   </div>
