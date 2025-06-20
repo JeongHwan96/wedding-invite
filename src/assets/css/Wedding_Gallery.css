@@ -12,6 +12,10 @@
   padding-bottom: 2rem;
 }
 
+.title h3 {
+  text-align: center;
+}
+
 /* 반응형 썸네일 갤러리 */
 .players {
   display: grid;
