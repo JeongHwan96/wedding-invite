@@ -112,10 +112,7 @@
   padding: 3px 3px 3px 3px;
   box-shadow: 0px 0px 2px 2px #ccc8c8;
 }
-.More_Wrap:hover {
-  background-color: bisque;
-  transition: 0.2s;
-}
+
 #btn {
   border: none;
   background-color: transparent;
