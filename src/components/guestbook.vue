@@ -13,7 +13,7 @@
         >: {{ msg.content }}
       </div>
       <div class="More_Wrap" @click="loadMore" v-if="isMore">
-        <button id="btn">더보기<strong> ∨</strong></button>
+        <button id="btn">더보기</button>
       </div>
     </div>
   </div>
