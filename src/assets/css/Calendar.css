@@ -1,0 +1,131 @@
+.container {
+  max-width: 768px;
+  width: 96%;
+  margin: 3rem auto;
+  box-sizing: border-box;
+}
+
+/* 구분선 */
+.divide-line {
+  margin: 3rem auto;
+  border: 0.7px solid rgb(218, 218, 218);
+  width: 85%;
+}
+
+/* 제목 */
+.title p {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  margin: 0 auto;
+  padding: 0 1rem 1rem;
+  letter-spacing: 0.8rem;
+  text-align: center;
+}
+.desc {
+  font-size: clamp(1.3rem, 3.8vw, 1.7rem);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* 요일 라인 */
+.day-row {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: clamp(1.2rem, 3vw, 1.4rem);
+}
+
+/* 날짜 컬럼 */
+.date-column {
+  display: flex;
+  flex-direction: column;
+  font-size: clamp(1.2rem, 3vw, 1.4rem);
+}
+
+/* 각 주 라인 */
+.week1,
+.week2,
+.week3,
+.week4,
+.week5 {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 1.2rem;
+}
+
+/* 날짜 박스 공통 */
+.week1 > div,
+.week2 > div,
+.week3 > div,
+.week4 > div,
+.week5 > div {
+  position: relative;
+  width: 3rem;
+  height: 3rem;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* D-day 보라색 원 배경 */
+#Dday {
+  position: absolute;
+  top: 34%;
+  left: 50%;
+  width: 2.6rem;
+  height: 2.6rem;
+  background: #a588bb;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+/* 현충일 표시 */
+#bar {
+  position: absolute;
+  background: #d1b6e6;
+  width: 3rem;
+  color: white;
+  font-size: clamp(0.8rem, 2.5vw, 1rem);
+  white-space: nowrap;
+  z-index: 1;
+}
+
+/* 기타 스타일 */
+.lastDay {
+  opacity: 0.5;
+}
+.holiday,
+.sun {
+  color: rgba(255, 103, 57, 0.76);
+  font-weight: bold;
+}
+
+/* 디데이 문구 */
+.counting {
+  text-align: center;
+  font-size: clamp(1.3rem, 3.5vw, 1.5rem);
+  margin: 2rem 0;
+}
+.counting span {
+  color: #ee2f4f;
+}
+
+/* 💬 모바일 대응 */
+@media (max-width: 320px) {
+  #bar {
+    font-size: 0.75rem;
+    padding: 0.15rem 0.5rem;
+  }
+
+  .week1 > div,
+  .week2 > div,
+  .week3 > div,
+  .week4 > div,
+  .week5 > div {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+
+  #Dday {
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+}
