@@ -2,7 +2,7 @@
   <div class="container">
     <div class="title">
       <p>Gallery</p>
-      <h3>클릭하여 슬라이드 하여 넘겨 볼 수 있어요!</h3>
+      <h3>클릭하여 슬라이드 하여 넘겨 볼 수 있어요</h3>
     </div>
 
     <div class="players">
