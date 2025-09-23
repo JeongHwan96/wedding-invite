@@ -14,7 +14,10 @@ export default class WeddingGallery extends Vue {
     { className: "img2", identifier: 2 },
     { className: "img3", identifier: 3 },
     { className: "img4", identifier: 4 },
-    { className: "img5", identifier: 5 }
+    { className: "img5", identifier: 5 },
+    { className: "img6", identifier: 6 },
+    { className: "img7", identifier: 7 },
+    { className: "img8", identifier: 8 }
   ];
 
   isModalOpen = false;
@@ -52,7 +55,10 @@ export default class WeddingGallery extends Vue {
       img2: require("@/assets/img/img1.jpg"),
       img3: require("@/assets/img/img1.jpg"),
       img4: require("@/assets/img/img1.jpg"),
-      img5: require("@/assets/img/img1.jpg")
+      img5: require("@/assets/img/img1.jpg"),
+      img6: require("@/assets/img/img1.jpg"),
+      img7: require("@/assets/img/img1.jpg"),
+      img8: require("@/assets/img/img1.jpg")
     };
     return map[className];
   }
