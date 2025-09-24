@@ -7,6 +7,7 @@
     <Map></Map>
     <BankAccount></BankAccount>
     <guestbook></guestbook>
+    <SnsShare></SnsShare>
     <Footer></Footer>
   </div>
 </template>

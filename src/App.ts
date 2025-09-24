@@ -7,6 +7,7 @@ import Map from "./components/Map.vue";
 import BankAccount from "./components/BankAccount.vue";
 import guestbook from "./components/guestbook.vue";
 import Footer from "./components/Footer.vue";
+import SnsShare from "./components/SnsShare.vue";
 @Component({
   components: {
     Intro,
@@ -16,7 +17,8 @@ import Footer from "./components/Footer.vue";
     Map,
     BankAccount,
     guestbook,
-    Footer
+    Footer,
+    SnsShare
   }
 })
 export default class App extends Vue {}
