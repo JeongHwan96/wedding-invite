@@ -28,16 +28,16 @@ export default class SnsShare extends Vue {
         description: "우리 결혼식에 초대합니다. 함께해 주세요!",
         imageUrl: "mwedding-invite.netlify.app/assets/img/img1.jpg",
         link: {
-          mobileWebUrl: "https://yourdomain.com",
-          webUrl: "https://yourdomain.com"
+          mobileWebUrl: "mwedding-invite.netlify.app",
+          webUrl: "mwedding-invite.netlify.app"
         }
       },
       buttons: [
         {
           title: "청첩장 보기",
           link: {
-            mobileWebUrl: "https://yourdomain.com",
-            webUrl: "https://yourdomain.com"
+            mobileWebUrl: "mwedding-invite.netlify.app",
+            webUrl: "mwedding-invite.netlify.app"
           }
         }
       ]
