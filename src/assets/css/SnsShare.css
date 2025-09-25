@@ -1,24 +1,30 @@
-.share {
-  background-color: #fefaf6;
+.share > h3 {
+  text-align: center;
+  font-size: 1.5rem;
 }
 
 .kakaoshare {
   display: flex;
   align-items: center;
-  background: #3c1e1e;
-  border-radius: 30px;
-  background-repeat: no-repeat;
-  background-position: 8px center;
-  width: 30%;
-  border: none;
-  border-radius: 8px;
+  justify-content: center;
+  gap: 8px;
   padding: 8px 12px;
   cursor: pointer;
   font-weight: bold;
-  gap: 4%;
-}
-
-.KakaoShareText {
-  font-size: 14px;
+  border-radius: 8px;
+  background-color: #3c1e1e;
   color: #ffffff;
+  font-size: 14px;
+  text-decoration: none;
+  transition: background 0.2s;
+
+  .kakaoshare:hover {
+    background-color: #5c2e2e;
+  }
+
+  .kakaoshare img.kakao-btn {
+    height: 20px;
+    width: auto;
+    display: inline-block;
+  }
 }
