@@ -63,6 +63,19 @@
   color: #8c6b4f; 
 }
 
+.icon, .groomicon {
+    text-align: center;
+    margin: 10% 0 0 0;
+}
+
+.callimg, .messegeimg, .groomcallimg, .groommessegeimg {
+    width: 20%;
+}
+
+.callimg,.groomcallimg {
+    margin: 0 10% 0 0;
+}
+
 
 
 @media screen and (max-width: 768px) {
