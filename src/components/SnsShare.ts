@@ -24,9 +24,8 @@ export default class SnsShare extends Vue {
     window.Kakao.Share.sendDefault({
       objectType: "feed",
       content: {
-        title: "결혼식에 초대합니다 💌",
-        description:
-          "두 사람이 소중한 인연을 맺고 함께 걸어가려 합니다. 귀한 걸음으로 저희의 시작을 축복해주세요!",
+        title: "김정환 💌 박소연",
+        description: '"2026년 06월 13일" "<br>평택 드마레 웨딩컨벤션"',
         imageUrl: "https://jeonghwan96.github.io/wedding-invite//assets/img/img1.jpg",
         link: {
           mobileWebUrl: "https://jeonghwan96.github.io/wedding-invite/",

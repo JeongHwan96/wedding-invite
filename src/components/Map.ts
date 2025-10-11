@@ -57,7 +57,7 @@ export default class Map extends Vue {
       image: markerImage
     });
 
-    const iwContent = `<div style="padding:10px;">${this.urlComponent} <br></div>`;
+    const iwContent = `<div style="width:150px;text-align:center;padding-top:4px; font-size: 13px; padding: 14px 1px 0 0">${this.urlComponent}</div> <br></div>`;
     const infowindow = new window.kakao.maps.InfoWindow({
       content: iwContent,
       position: markerPosition
