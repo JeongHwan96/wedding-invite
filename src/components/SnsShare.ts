@@ -25,7 +25,7 @@ export default class SnsShare extends Vue {
       objectType: "feed",
       content: {
         title: "김정환 💌 박소연",
-        description: `2026년 06월 13일 <br> 평택 드마레 웨딩컨벤션`,
+        description: `2026년 06월 13일 \n 평택 드마레 웨딩컨벤션`,
         imageUrl: "https://jeonghwan96.github.io/wedding-invite//assets/img/img1.jpg",
         link: {
           mobileWebUrl: "https://jeonghwan96.github.io/wedding-invite/",
