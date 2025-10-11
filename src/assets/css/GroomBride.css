@@ -1,0 +1,86 @@
+* {
+  font-family: "Pretendard", sans-serif;
+}
+
+.GroomBrideText {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20%;
+}
+
+.GroomBridePhotoWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px; /* 신랑/신부 간 간격 */
+  margin: 0 5%;
+}
+
+/* --- 신랑 섹션 --- */
+.GroomWrap {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* 왼쪽 정렬 */
+  gap: 20px;
+  width: 90%;
+}
+
+/* --- 신부 섹션 --- */
+.BrideWrap {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* 오른쪽 정렬 */
+  gap: 20px;
+  width: 90%;
+}
+
+.GroomPhoto,
+.BridePhoto {
+  width: 40%;
+  border-radius: 10px;
+}
+
+
+.GroomName,
+.BrideName {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.GroomName > span,
+.BrideName > span {
+    font-size: 2rem;
+}
+
+.GroomName span:first-child,
+.BrideName span:first-child {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #8c6b4f; 
+}
+
+
+
+@media screen and (max-width: 768px) {
+  .GroomWrap,
+  .BrideWrap {
+   
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .GroomPhoto,
+  .BridePhoto {
+    width: 40%;
+  }
+
+  .GroomName,
+  .BrideName {
+    font-size: 1rem;
+  }
+}

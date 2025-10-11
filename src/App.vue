@@ -6,6 +6,7 @@
     <wedding-gallery></wedding-gallery>
     <Map></Map>
     <BankAccount></BankAccount>
+    <GroomBride></GroomBride>
     <guestbook></guestbook>
     <SnsShare></SnsShare>
     <Footer></Footer>

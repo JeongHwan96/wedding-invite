@@ -8,6 +8,7 @@ import BankAccount from "./components/BankAccount.vue";
 import guestbook from "./components/guestbook.vue";
 import Footer from "./components/Footer.vue";
 import SnsShare from "./components/SnsShare.vue";
+import GroomBride from "./components/GroomBride.vue";
 @Component({
   components: {
     Intro,
@@ -16,6 +17,7 @@ import SnsShare from "./components/SnsShare.vue";
     WeddingGallery,
     Map,
     BankAccount,
+    GroomBride,
     guestbook,
     Footer,
     SnsShare
