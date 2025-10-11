@@ -9,9 +9,11 @@
           <span>김정환</span>
           <div class="groomicon">
             <span class="call"
+              ><a href="tel:010-8984-4667"></a
               ><img class="groomcallimg" src="../assets/img/call.png" alt="전화 걸기"
             /></span>
             <span class="messege"
+              ><a href="sms:010-8984-4667"></a
               ><img class="groommessegeimg" src="../assets/img/messege.png" alt="전화 걸기"
             /></span>
           </div>
@@ -24,9 +26,11 @@
           <span>박소연</span>
           <div class="icon">
             <span class="call"
+              ><a href="tel:010-3425-7815"></a
               ><img class="callimg" src="../assets/img/call.png" alt="전화 걸기"
             /></span>
             <span class="messege"
+              ><a href="sms:010-3425-7815"></a
               ><img class="messegeimg" src="../assets/img/messege.png" alt="전화 걸기"
             /></span>
           </div>
