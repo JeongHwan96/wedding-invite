@@ -2,10 +2,16 @@
   font-family: "Pretendard", sans-serif;
 }
 
+.GroomBrideWrap {
+  background-color: #fefaf6;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
 .GroomBrideText {
   text-align: center;
   font-size: 2rem;
-  margin-bottom: 20%;
+  margin: 0 0 10% 0;
 }
 
 .GroomBridePhotoWrap {
@@ -32,6 +38,7 @@
   justify-content: flex-end; /* 오른쪽 정렬 */
   gap: 20px;
   width: 90%;
+  margin: 0 0 10% 0;
 }
 
 .GroomPhoto,
@@ -39,7 +46,6 @@
   width: 40%;
   border-radius: 10px;
 }
-
 
 .GroomName,
 .BrideName {
@@ -53,35 +59,37 @@
 
 .GroomName > span,
 .BrideName > span {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 
 .GroomName span:first-child,
 .BrideName span:first-child {
   font-weight: bold;
   font-size: 1.5rem;
-  color: #8c6b4f; 
+  color: #8c6b4f;
 }
 
-.icon, .groomicon {
-    text-align: center;
-    margin: 10% 0 0 0;
+.icon,
+.groomicon {
+  text-align: center;
+  margin: 10% 0 0 0;
 }
 
-.callimg, .messegeimg, .groomcallimg, .groommessegeimg {
-    width: 20%;
+.callimg,
+.messegeimg,
+.groomcallimg,
+.groommessegeimg {
+  width: 20%;
 }
 
-.callimg,.groomcallimg {
-    margin: 0 10% 0 0;
+.callimg,
+.groomcallimg {
+  margin: 0 10% 0 0;
 }
-
-
 
 @media screen and (max-width: 768px) {
   .GroomWrap,
   .BrideWrap {
-   
     align-items: center;
     width: 100%;
     gap: 10px;
