@@ -7,7 +7,8 @@
   width: 96%;
   box-sizing: border-box;
 }
-.container.active {
+
+.active {
   opacity: 1;
   transform: translateY(0);
 }

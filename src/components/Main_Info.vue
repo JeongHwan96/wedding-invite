@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="main-picture">
-      <img src="../assets/img/img1.jpg" alt="이미지 추후 추가 예정" />
+      <img src="../assets/img/img1.jpg" class="WeddingImg" alt="이미지 추후 추가 예정" />
     </div>
     <div class="main-info">
       <div class="main-info-title">

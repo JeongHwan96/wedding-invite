@@ -9,7 +9,7 @@
 
     <div class="message_list">
       <div class="message" v-for="(msg, index) in visibleMessage" :key="index">
-        <strong>{{ msg.name }}</strong
+        <strong class="GuestBookName">{{ msg.name }}</strong
         >: {{ msg.content }}
       </div>
       <div class="More_Wrap" @click="loadMore" v-if="isMore">
