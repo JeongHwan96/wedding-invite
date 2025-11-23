@@ -51,14 +51,13 @@ export default class WeddingGallery extends Vue {
 
   getImageUrl(className: string): string {
     const map: { [key: string]: string } = {
-      img1: require("@/assets/img/화면 캡처 2024-08-14 080859.png"),
-      img2: require("@/assets/img/img1.jpg"),
-      img3: require("@/assets/img/img1.jpg"),
-      img4: require("@/assets/img/img1.jpg"),
-      img5: require("@/assets/img/img1.jpg"),
-      img6: require("@/assets/img/img1.jpg"),
-      img7: require("@/assets/img/img1.jpg"),
-      img8: require("@/assets/img/img1.jpg")
+      img1: require("@/assets/img/img1.jpg"),
+      img2: require("@/assets/img/img2.jpg"),
+      img3: require("@/assets/img/img3.jpg"),
+      img4: require("@/assets/img/img4.jpg"),
+      img5: require("@/assets/img/img5.jpg"),
+      img6: require("@/assets/img/img6.jpg"),
+      img7: require("@/assets/img/img7.jpg")
     };
     return map[className];
   }

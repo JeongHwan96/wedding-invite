@@ -1,3 +1,4 @@
+/* --- 컨테이너 / 타이틀 (기존 유지) --- */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -16,34 +17,52 @@
   text-align: center;
 }
 
-/* 반응형 썸네일 갤러리 */
+/* --- 갤러리: 그리드와 고정된 행 높이 설정 --- */
 .players {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  gap: 1rem;
-  justify-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); /* 한 행에 들어갈 최소 사이즈 */
+  grid-auto-rows: 160px; /* 모든 셀의 높이를 동일하게 고정 (필요시 값 조절) */
+  gap: 12px;
+  align-items: stretch; /* 셀 내부가 동일 높이로 맞게 함 */
+  box-sizing: border-box;
+  padding: 0 0.5rem;
 }
 
 .player {
   width: 100%;
-  aspect-ratio: 1 / 1;
+  /* height 고정 제거 */
   overflow: hidden;
-  border-radius: 8px;
-}
-.player:hover {
-  transform: scale(1.3);
-  transition: transform 0.5s;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f7f7f7;
 }
 
+/* (선택) hover 시 살짝 키우기 — 너무 크면 제거 */
+.player:hover {
+  transform: translateY(-4px);
+}
+
+/* 이미지 래퍼 */
 .image {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 8px;
-  cursor: pointer;
+  /* 높이는 이미지 비율에 맞춰 자동 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* 모달 오버레이 */
+.image img {
+  width: 100%;
+  height: auto;      /* 높이를 자동으로, 원본 비율 유지 */
+  object-fit: contain; /* 잘리지 않음 */
+  display: block;
+  border-radius: 8px;
+}
+
+/* ---------------- 모달(확대) 관련 (기존과 동일하게 유지) ---------------- */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -59,7 +78,6 @@
   box-sizing: border-box;
 }
 
-/* Swiper 모달 */
 .swiper-container {
   width: 100%;
   max-width: 500px;
@@ -76,8 +94,8 @@
 .modal-image {
   max-width: 100%;
   max-height: 80vh;
-  object-fit: contain;
-  border-radius: 8px;
+  object-fit: cover;
+ 
 }
 
 /* 닫기 버튼 */
@@ -102,7 +120,6 @@
   height: 100%;
   fill: white;
   transition: transform 0.2s ease;
-  pointer-events: none;
 }
 
 .modal-close:hover svg {
@@ -118,12 +135,22 @@
   background: white;
 }
 
-/* 모바일 대응 */
+/* 모바일 대응: 그리드와 행 높이 축소 */
+@media (max-width: 768px) {
+  .players {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    grid-auto-rows: 120px;
+    gap: 10px;
+  }
+}
+
 @media (max-width: 480px) {
+  .players {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 140px;
+  }
   .modal-close {
     top: 1rem;
     right: 1rem;
-    font-size: 0.9rem;
-    padding: 0.3rem 0.6rem;
   }
 }
