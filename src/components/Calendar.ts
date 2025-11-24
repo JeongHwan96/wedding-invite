@@ -1,5 +1,14 @@
 import { Component, Vue } from "vue-property-decorator";
 
+// TimeRemaining 인터페이스
+interface TimeRemaining {
+  days: number;
+  hours: number;
+  minutes: number;
+  seconds: number;
+  isPast: boolean;
+}
+
 type DayHeader = {
   name: string;
   style: string | undefined;
@@ -13,19 +22,65 @@ type CalendarCell = {
 
 @Component
 export default class Calendar extends Vue {
-  // ✅ D-Day 계산용 computed 대체
-  get getDate(): string {
-    const now = new Date().getTime();
-    const dday = new Date("June 13, 2026 00:00:00").getTime();
-    const gap = dday - now;
+  // 템플릿에서 접근할 수 있도록 public으로 선언
+  public remainingTime: TimeRemaining = {
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+    isPast: false
+  };
+  private timerInterval: number | undefined;
+  // 목표 날짜 및 시간 설정 (2026년 6월 13일 오후 4시 50분)
+  private targetDate: Date = new Date("June 13, 2026 16:50:00");
 
-    if (gap < 0) {
-      return Math.abs(Math.ceil(gap / (1000 * 60 * 60 * 24))) + "일 지났습니다.";
-    }
-    return Math.ceil(gap / (1000 * 60 * 60 * 24)) + "일 남았습니다.";
+  private calculateTimeRemaining(): TimeRemaining {
+    const now = new Date().getTime();
+    const gap = this.targetDate.getTime() - now;
+
+    const absGap = Math.abs(gap);
+    return {
+      days: Math.floor(absGap / (1000 * 60 * 60 * 24)),
+      hours: Math.floor((absGap / (1000 * 60 * 60)) % 24),
+      minutes: Math.floor((absGap / (1000 * 60)) % 60),
+      seconds: Math.floor((absGap / 1000) % 60),
+      isPast: gap < 0
+    };
   }
 
-  // ✅ 타입 명시
+  mounted() {
+    this.updateTimer(); // 초기 1회 실행
+    // 1초마다 업데이트
+    this.timerInterval = setInterval(this.updateTimer, 1000);
+  }
+
+  beforeDestroy() {
+    // 컴포넌트 종료 시 타이머 제거
+    if (this.timerInterval) {
+      clearInterval(this.timerInterval);
+    }
+  }
+
+  // 템플릿에서 사용할 헬퍼 함수: 시/분/초를 두 자리수로 포맷팅
+  public pad(num: number): string {
+    return num.toString().padStart(2, "0");
+  }
+
+  private updateTimer() {
+    this.remainingTime = this.calculateTimeRemaining();
+  }
+
+  // 템플릿 하단 메시지 출력을 위한 computed 속성
+  get countdownMessage(): string {
+    const { days, isPast } = this.remainingTime;
+    if (isPast) {
+      return `${days}일 지났습니다.`;
+    } else {
+      return `${days}일 남았습니다.`;
+    }
+  }
+
+  // (기존 days, week1~week5 데이터는 그대로 유지)
   days: DayHeader[] = [
     { name: "Sun", style: "sun" },
     { name: "Mon", style: undefined },

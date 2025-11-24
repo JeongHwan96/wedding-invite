@@ -76,8 +76,32 @@
     </div>
 
     <div class="divide-line"></div>
-
-    <div class="counting">정환<span>♥</span>소연의 결혼식이 {{ getDate }}</div>
+    <div class="DateTotalWrap">
+      <!-- ✅ 바인딩된 DAYS -->
+      <div class="DayWrap">
+        <div class="DAYSNum">{{ remainingTime.days }}</div>
+        <div class="DAYSString">DAYS</div>
+      </div>
+      <!-- ✅ 바인딩 및 포맷팅된 HOURS -->
+      <div class="HOURSWrap">
+        <div class="HOURSNum">{{ pad(remainingTime.hours) }}</div>
+        <div class="HOURSString">HOURS</div>
+      </div>
+      <!-- ✅ 바인딩 및 포맷팅된 MINUTES -->
+      <div class="MinWrap">
+        <div class="MinNum">{{ pad(remainingTime.minutes) }}</div>
+        <div class="MinString">MINUTES</div>
+      </div>
+      <!-- ✅ 바인딩 및 포맷팅된 SECONDS -->
+      <div class="SecWrap">
+        <div class="SecSNum">{{ pad(remainingTime.seconds) }}</div>
+        <div class="SecString">SECONDS</div>
+      </div>
+    </div>
+    <div class="counting">
+      <!-- ✅ 바인딩된 메시지 -->
+      정환<span>♥</span>소연의 결혼식이 {{ countdownMessage }}
+    </div>
 
     <div class="divide-line"></div>
   </div>

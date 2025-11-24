@@ -26,7 +26,7 @@ export default class SnsShare extends Vue {
       content: {
         title: "김정환 💌 박소연",
         description: `2026년 06월 13일 16시 50분 \n평택 드마레 웨딩컨벤션`,
-        imageUrl: "https://jeonghwan96.github.io/wedding-invite//assets/img/img1.jpg",
+        imageUrl: "https://jeonghwan96.github.io/wedding-invite//assets/img/share.jpg",
         link: {
           mobileWebUrl: "https://jeonghwan96.github.io/wedding-invite/",
           webUrl: "https://jeonghwan96.github.io/wedding-invite/"

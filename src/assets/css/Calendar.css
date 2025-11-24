@@ -26,6 +26,71 @@
   margin-bottom: 2rem;
 }
 
+/* 남은 시간 */
+.DateTotalWrap {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+.DayWrap,
+.HOURSWrap,
+.MinWrap,
+.SecWrap {
+  margin: 0 10px;
+  padding: 15px 10px;
+  width: 15%;
+  text-align: center;
+  border: none;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.DayWrap:hover,
+.HOURSWrap:hover,
+.MinWrap:hover,
+.SecWrap:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* 숫자 폰트 스타일링 */
+.DAYSNum,
+.HOURSNum,
+.MinNum,
+.SecSNum {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333333;
+  line-height: 1.2;
+}
+
+.DAYSString,
+.HOURSString,
+.MinString,
+.SecString {
+  font-size: 1.2rem;
+  color: #888888;
+  margin-top: 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.counting {
+  text-align: center;
+  font-size: 2rem;
+  color: #555;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.counting span {
+  color: #ff69b4;
+  margin: 0 5px;
+  font-size: 1.2rem;
+}
+
 /* 요일 라인 */
 .day-row {
   display: flex;
@@ -99,14 +164,14 @@
 }
 
 /* 디데이 문구 */
-.counting {
+/* .counting {
   text-align: center;
   font-size: clamp(1.3rem, 3.5vw, 1.5rem);
   margin: 2rem 0;
 }
 .counting span {
   color: #ee2f4f;
-}
+} */
 
 /* 💬 모바일 대응 */
 @media (max-width: 320px) {
