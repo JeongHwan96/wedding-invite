@@ -5,10 +5,11 @@
       <h3>클릭하여 슬라이드 하여 넘겨 볼 수 있어요</h3>
     </div>
 
+    <!-- 갤러리 -->
     <div class="players">
       <div
         class="player"
-        v-for="(weddingphoto, index) in photo"
+        v-for="(weddingphoto, index) in visiblePhotos"
         :key="weddingphoto.identifier"
         @click="openModal(index)"
       >
@@ -18,10 +19,14 @@
       </div>
     </div>
 
+    <!-- 더보기 버튼 -->
+    <div class="More_Wrap" v-if="isGalleryMore" @click="loadGalleryMore">
+      <button id="GalleryMoreBtn">더보기</button>
+    </div>
+
     <!-- 모달 슬라이더 -->
     <div v-show="isModalOpen" class="modal-overlay" @click.self="closeModal">
       <div class="swiper-container" ref="swiperContainer">
-        <!-- ✅ Swiper 외부로 이동한 닫기 버튼 -->
         <button class="modal-close" @click="closeModal">
           <svg
             xmlns="http://www.w3.org/2000/svg"
